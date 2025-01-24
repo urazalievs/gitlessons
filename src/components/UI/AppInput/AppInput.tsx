@@ -1,3 +1,4 @@
+import React from "react";
 import { SAppInput, SErrorText } from "./AppInput.style";
 
 type TAppInput = {

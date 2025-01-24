@@ -18,6 +18,8 @@ import { useDispatch } from "react-redux";
 const registrationFormScheme = yup.object({
   name: yup.string().required(),
   email: yup
+
+  
     .string()
     .email("Введите корректный email")
     .required("Обязательное поле!"),

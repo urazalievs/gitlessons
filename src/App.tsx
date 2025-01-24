@@ -1,10 +1,11 @@
+import React from "react";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import {RegistrationPage } from "./pages/RegistrationPage/RegistrationPage"
 import { MainPage } from "./pages/MainPage/MainPage";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 import { SContainer } from "./themes/Container.style";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { PasswordError } from "./pages/PasswordError/PasswordError";
+import PasswordErrore from "./pages/PasswordError/PasswordError";
 
 function App() {
   const routerConfig = createBrowserRouter([
@@ -26,7 +27,7 @@ function App() {
     },
     {
       path:"/password-error",
-      element:<PasswordError/>
+      element:<PasswordErrore/>
     }
   ]);
   return (
