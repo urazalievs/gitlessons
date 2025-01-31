@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 
 interface SPostProps {
-    $isLiked: boolean,
-    $isMarket: boolean,
+    $isLiked?: boolean,
+    $isMarket?: boolean,
 }
 export const SPost = styled.div<SPostProps>`
     .Post {
@@ -93,5 +93,39 @@ export const SPost = styled.div<SPostProps>`
   &__text {
     margin-bottom: 20px;
   }
+ 
 }
+.UserElSet{
+    width:30px;
+    height:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    /* background-color:black; */
+    div{
+      width: 7px;
+      height:5px;
+      background-color: #4e4e4e;
+      border-radius: 10px;
+    }
+  }
+  .postSet{
+    display:flex;
+    gap:5px;
+  }
+  
+`
+
+export const SPostSetting = styled.span`
+      font-size: 16px;
+      color: ${(props)=>props.theme.color.blue};
+      border: 1px solid ${(props)=>props.theme.color.gray};
+      cursor: pointer;
+      transition: color .5s;
+      padding: 5px;
+      border-radius: 15px;
+      &:hover{
+        color: white;
+        background-color: orange;
+      }
 `

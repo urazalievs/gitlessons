@@ -40,8 +40,8 @@ export const LoginPage = () => {
     resolver: yupResolver(AuthFormScheme),
     mode: "onBlur",
     defaultValues: {
-      userEmail: `${user?.email ? user.email : ''}`,
-      userPassword: `${user?.password ? user.password: ''}`,
+      userEmail: `${user?.email ? user.email : ""}`,
+      userPassword:`${user?.password ? user.password : ""}`,
     },
   });
   const [loginUser, { data: userData }] = useLoginUserMutation();

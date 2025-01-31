@@ -6,7 +6,7 @@ import "../LoginPage/LoginPage.scss";
 import * as yup from "yup";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useLoginUserMutation } from "../../store/API/authApi";
+import {  useRegisterUserMutation } from "../../store/API/authApi";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IRegisterUserPayload } from "../../store/API/authApi";
@@ -33,7 +33,7 @@ const registrationFormScheme = yup.object({
 
 export const RegistrationPage = () => {
   const navigate = useNavigate();
-  const [ registerUser, {data:userData}]= useLoginUserMutation()
+  const [ registerUser,{data:userData}]= useRegisterUserMutation();
   const dispatch = useDispatch()
 
   const {
@@ -59,7 +59,10 @@ export const RegistrationPage = () => {
       password: data.password,
       user_city: data.user_city,
     };
+    console.log(payload);
+    
     try {
+      // await registerUser(payload).then((response)=>console.log(response))
       const response = await registerUser(payload).unwrap();
       if(response.user_id){
         dispatch(changeUser(payload));

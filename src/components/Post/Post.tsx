@@ -1,25 +1,36 @@
+import { useState } from "react";
 import { SPost } from "./Post.style";
+import { PostSetting } from "./PostSetting";
 
 interface IPostProps {
-    isLiked:boolean,
-    isMarket:boolean,
+    isLiked?: boolean,
+    isMarket?: boolean,
     // likeBtn:()=>void
-    userName:string,
+    userName: string,
     regDate: string,
-    postText:string
+    postText: string
 }
 
-export const Post = ({ isLiked, isMarket,userName,regDate,postText}: IPostProps) => {
+export const Post = ({ isLiked, isMarket, userName, regDate, postText }: IPostProps) => {
+    const [isSetStatus, setIsetStatus] = useState<boolean>(false)
+
     return (
+        <>
         <SPost $isLiked={isLiked} $isMarket={isMarket}>
             <div className="UserElem">
                 <img src="./img/users/aleksandr-maykov.jpeg" alt="User" />
                 <div className="user__description">
                     <a href="#" className="main__text">
-                       {userName}
+                        {userName}
                     </a>
                     <p className="secondary__text">{regDate}</p>
                 </div>
+                <div onClick={()=>setIsetStatus(!isSetStatus)} className="UserElSet">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                {isSetStatus && <PostSetting />}
             </div>
             <p className="Post__text">{postText}</p>
             <div className="media-container">
@@ -131,17 +142,23 @@ export const Post = ({ isLiked, isMarket,userName,regDate,postText}: IPostProps)
                     />
                 </svg>
             </div>
-            <svg
+            {/* <svg
                 className="icon icon-more"
                 viewBox="0 0 25 5"
                 xmlns="http://www.w3.org/2000/svg"
-            >
+                onClick={()=>setIsetStatus(!isSetStatus)}
+          >
                 <g id="more">
                     <circle id="ellipse" cx="22.5" cy="2.5" r="2.5" />
                     <circle id="ellipse_2" cx="12.5" cy="2.5" r="2.5" />
                     <circle id="ellipse_3" cx="2.5" cy="2.5" r="2.5" />
                 </g>
-            </svg>
+            </svg> */}
+        {isSetStatus && <PostSetting />}
         </SPost>
+       
+        </>
+        
+
     );
 };

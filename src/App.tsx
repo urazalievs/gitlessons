@@ -6,6 +6,7 @@ import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 import { SContainer } from "./themes/Container.style";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PasswordErrore from "./pages/PasswordError/PasswordError";
+import { PostPage } from "./pages/PostPage/PostPage";
 
 function App() {
   const routerConfig = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
     {
       path:"/password-error",
       element:<PasswordErrore/>
+    },
+    {
+      path: "/post/:postId",
+      element:<PostPage/>
     }
   ]);
   return (
