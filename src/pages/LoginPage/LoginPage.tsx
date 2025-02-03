@@ -22,7 +22,6 @@ const AuthFormScheme = yup.object({
     .min(4, "Пароль должен содержать как минимум 4 символа!")
     .required("Обязательное поле!"),
 });
-
 interface ILoginForm {
   userEmail: string;
   userPassword: string;

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { SHistory } from "./History";
 
 export const History = () => {

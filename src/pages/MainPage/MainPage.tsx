@@ -3,7 +3,6 @@ import { List } from "../../components/List/List";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Post } from "../../components/Post/Post";
 import {History} from '../../components/History/History.tsx';
-import { AppInput } from "../../components/UI/AppInput/AppInput";
 import { Header } from "../../components/UI/Header/Header";
 import { WhatsNew } from "../../components/WhatsNew/WhatsNew";
 import { useGetAllPostQuery } from "../../store/API/postApi";

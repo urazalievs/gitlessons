@@ -7,7 +7,6 @@ import * as yup from "yup";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {  useRegisterUserMutation } from "../../store/API/authApi";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IRegisterUserPayload } from "../../store/API/authApi";
 import { changeUser } from "../../store/userSlice";
@@ -33,7 +32,7 @@ const registrationFormScheme = yup.object({
 
 export const RegistrationPage = () => {
   const navigate = useNavigate();
-  const [ registerUser,{data:userData}]= useRegisterUserMutation();
+  const [ registerUser,{}]= useRegisterUserMutation();
   const dispatch = useDispatch()
 
   const {

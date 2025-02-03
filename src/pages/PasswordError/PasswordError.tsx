@@ -1,4 +1,4 @@
-import React from "react";
+
 import { AppButton } from "../../components/UI/AppButton/AppButton";
 import { AppInput } from "../../components/UI/AppInput/AppInput";
 import { SContainer } from "../../themes/Container.style";

@@ -1,4 +1,3 @@
-import React from "react";
 import { SAppButton } from "./AppButton.style";
 
 type TAppButton = {
